@@ -6,9 +6,22 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div class="d-flex vh-100">
+  <!-- Sidebar -->
+  <app-sidebar ></app-sidebar>
 
-<button type="button" class="btn btn-primary">Botón de Bootstrap</button>
+  <!-- Contenedor principal -->
+  <div class="d-flex flex-column w-100">
+    <!-- Navbar -->
+    <app-navbar class="h-20 w-100 bg-white shadow-sm"></app-navbar>
 
+    <!-- Contenido -->
+    <div class="container-fluid flex-grow-1 p-4">
+      <router-outlet />
+    </div>
+  </div>
+</div>
+<!-- <button type="button" class="btn btn-primary">Botón de Bootstrap</button> -->
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
@@ -19,4 +32,3 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 
-<router-outlet />

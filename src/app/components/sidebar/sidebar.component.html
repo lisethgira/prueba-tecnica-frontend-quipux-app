@@ -1,0 +1,43 @@
+<div class="d-flex flex-column gap-3">
+  <!-- Sidebar -->
+  <div
+    [ngClass]="open ? 'w-auto' : 'w-25'"
+    class="d-flex flex-column p-4 vh-100"
+    style="background-color: #302634"
+  >
+    <fa-icon
+      (click)="toggleMenu()"
+      [icon]="faBars"
+      class="text-white fs-4 cursor-pointer"
+    ></fa-icon>
+
+    <img
+      *ngIf="!open"
+      src="assets/images/logotipo.jpg"
+      alt="Quipux Logotipo"
+      class="img-fluid mt-3"
+    />
+
+    <img
+      *ngIf="open"
+      src="assets/images/logoblanco.png"
+      alt="Quipux Logo"
+      class="img-fluid mt-3"
+    />
+  </div>
+
+  <!-- Menú de Navegación -->
+  <nav class="mt-3">
+    <ul class="list-unstyled text-white">
+      <li>
+        <a routerLink="/" routerLinkActive="text-primary" class="text-decoration-none">🏠 Home</a>
+      </li>
+      <li>
+        <a routerLink="/empresas" routerLinkActive="text-primary" class="text-decoration-none">🏢 Empresas</a>
+      </li>
+      <li>
+        <a routerLink="/articulos" routerLinkActive="text-primary" class="text-decoration-none">📰 Artículos</a>
+      </li>
+    </ul>
+  </nav>
+</div>
