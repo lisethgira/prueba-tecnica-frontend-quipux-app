@@ -91,10 +91,10 @@
   .progress-bar {
     background-color: #049ef4 !important;
     width: 25%;
-    " role="progressbar"
-    aria-valuenow="25"
-    aria-valuemin="0"
-    aria-valuemax="100"/* Asegura que la barra de progreso sea azul */
+    role:"progressbar";
+    aria-valuenow:"25"
+    aria-valuemin:"0"
+    aria-valuemax:"100"/* Asegura que la barra de progreso sea azul */
   }
 
   .d-flex {

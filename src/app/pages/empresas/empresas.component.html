@@ -1,8 +1,8 @@
 <div class="container mt-5">
-  <div class="row " *ngIf="empresa && contacto">
+  <div class="row g-3" *ngIf="empresa && contacto">
     <!-- Tarjeta de Información de la Empresa -->
-    <div class="col-md-4">
-      <div class="card border-0 m-3 h-100">
+    <div class="col-12 col-md-4">
+      <div class="card border-0 m-3 h-100 mb-3">
         <div class="card-body">
           <h5 class="card-title fw-bold mb-4">INFORMACIÓN DE LA EMPRESA</h5>
           <div class="text-center m-0">
@@ -18,16 +18,17 @@
             <p class="m-0"><strong>Número de teléfonos:</strong></p>
             <p class="m-0"><strong>Fijo:</strong> {{ empresa.telefonos.fijo }}</p>
             <p><strong>Fax:</strong> {{ empresa.telefonos.fax }}</p>
-            <p ><strong>Sitio Web:</strong></p>
+            <p><strong>Sitio Web:</strong></p>
             <p class="m-0"><a [href]="empresa.sitio_web" target="_blank">{{ empresa.sitio_web }}</a></p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-md-8">
-      <div class="card border-0 m-3 h-100">
-        <div class="card-body flex-fill ">
+    <!-- Tarjeta de Información del Contacto -->
+    <div class="col-12 col-md-8">
+      <div class="card border-0 m-3 h-100 mb-3">
+        <div class="card-body flex-fill">
           <h5 class="card-title fw-bold mb-4">INFORMACIÓN DEL CONTACTO</h5>
           <div class="row">
             <div class="col-md-6 border-end text-center">
@@ -55,3 +56,4 @@
     </div>
   </div>
 </div>
+
