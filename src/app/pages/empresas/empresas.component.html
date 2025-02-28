@@ -1,1 +1,57 @@
-<p>empresas works!</p>
+<div class="container mt-5">
+  <div class="row " *ngIf="empresa && contacto">
+    <!-- Tarjeta de Información de la Empresa -->
+    <div class="col-md-4">
+      <div class="card border-0 m-3 h-100">
+        <div class="card-body">
+          <h5 class="card-title fw-bold mb-4">INFORMACIÓN DE LA EMPRESA</h5>
+          <div class="text-center m-0">
+            <p class="m-0"><strong>Nombre:</strong></p>
+            <p>{{ empresa.nombre }}</p>
+            <p class="m-0"><strong>Fecha de creación:</strong></p>
+            <p>{{ empresa.fecha_creacion }}</p>
+            <p class="m-0"><strong>Dirección:</strong></p>
+            <p class="m-0">{{ empresa.direccion.calle }}</p>
+            <p class="m-0">{{ empresa.direccion.edificio }}</p>
+            <p class="m-0">{{ empresa.direccion.distrito }}</p>
+            <p>Piso {{ empresa.direccion.piso }}, {{ empresa.direccion.ciudad }} - {{ empresa.direccion.pais }}</p>
+            <p class="m-0"><strong>Número de teléfonos:</strong></p>
+            <p class="m-0"><strong>Fijo:</strong> {{ empresa.telefonos.fijo }}</p>
+            <p><strong>Fax:</strong> {{ empresa.telefonos.fax }}</p>
+            <p ><strong>Sitio Web:</strong></p>
+            <p class="m-0"><a [href]="empresa.sitio_web" target="_blank">{{ empresa.sitio_web }}</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="card border-0 m-3 h-100">
+        <div class="card-body flex-fill ">
+          <h5 class="card-title fw-bold mb-4">INFORMACIÓN DEL CONTACTO</h5>
+          <div class="row">
+            <div class="col-md-6 border-end text-center">
+              <p class="m-0"><strong>Dirección:</strong></p>
+              <p>{{ contacto.direccion.calle }}, {{ contacto.direccion.ciudad }} - {{ contacto.direccion.pais }}</p>
+              <p class="m-0"><strong>Correo electrónico:</strong></p>
+              <p>{{ contacto.correo_electronico }}</p>
+              <p class="m-0"><strong>Sitio Web:</strong></p>
+              <p><a [href]="contacto.sitio_web" target="_blank">{{ contacto.sitio_web }}</a></p>
+              <p class="m-0"><strong>Redes Sociales:</strong></p>
+              <p class="m-0"><a [href]="contacto.redes_sociales.instagram" target="_blank">Instagram</a></p>
+              <p><a [href]="contacto.redes_sociales.linkedin" target="_blank">LinkedIn</a></p>
+            </div>
+            <div class="col-md-6 text-center">
+              <p class="m-0"><strong>Dirección de correspondencia de correo</strong></p>
+              <p>{{ contacto.direccion_correspondencia.calle }}, {{ contacto.direccion_correspondencia.ciudad }} - {{
+                contacto.direccion_correspondencia.pais }}</p>
+              <p class="m-0"><strong>Número de teléfonos</strong></p>
+              <p class="m-0"><strong>Fijo:</strong> {{ contacto.telefonos.fijo }}</p>
+              <p><strong>Celular:</strong> {{ contacto.telefonos.celular }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
