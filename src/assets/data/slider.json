@@ -1,3 +1,20 @@
-{
-    
-}
+[
+  {
+      "id": "1",
+      "imagen": "https://picsum.photos/800/400?random=1",
+      "titulo": "Innovación en Tecnología",
+      "descripcion": "Descubre las últimas tendencias en tecnología."
+  },
+  {
+      "id": "2",
+      "imagen": "https://picsum.photos/800/400?random=2",
+      "titulo": "Avances en Inteligencia Artificial",
+      "descripcion": "Cómo la IA está transformando el mundo."
+  },
+  {
+      "id": "3",
+      "imagen": "https://picsum.photos/800/400?random=3",
+      "titulo": "Sostenibilidad y Energía Renovable",
+      "descripcion": "Nuevas formas de energía limpia."
+  }
+]

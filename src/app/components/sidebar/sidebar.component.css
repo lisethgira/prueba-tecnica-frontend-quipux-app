@@ -21,6 +21,21 @@ fa-icon {
   width: 80px;
 }
 
+/* Centrar el icono de menú cuando el sidebar está colapsado */
+.sidebar-collapsed .d-flex {
+  justify-content: center;
+}
+
+/* Asegurar que el icono esté bien centrado */
+.sidebar-collapsed .d-flex fa-icon {
+  margin: 0 auto;
+}
+
+/* Ocultar el logo cuando el sidebar está colapsado */
+.sidebar-collapsed .d-flex a {
+  display: none;
+}
+
 /* Logo tamaño ajustable */
 .logo {
   width: 100px;
@@ -34,10 +49,34 @@ fa-icon {
   padding: 10px 15px;
   color: white;
   text-decoration: none;
+  transition: padding 0.3s ease-in-out;
 }
 
-.menu-item:hover {
-  color: #ff9800;
+/* Centrar iconos cuando el sidebar está colapsado */
+.sidebar-collapsed .menu-item {
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Espaciado entre icono y texto cuando el sidebar está abierto */
+.menu-item fa-icon {
+  margin-right: 10px;
+  transition: margin-right 0.3s ease-in-out;
+}
+
+.sidebar-collapsed .menu-item fa-icon {
+  margin-right: 0;
+}
+
+/* Ocultar texto cuando el sidebar está colapsado */
+.menu-item span {
+  transition: opacity 0.3s ease-in-out, margin-left 0.3s ease-in-out;
+}
+
+.sidebar-collapsed .menu-item span {
+  opacity: 0;
+  margin-left: -10px;
+  visibility: hidden;
 }
 
 /* Botón de menú en móviles */
@@ -64,7 +103,7 @@ fa-icon {
 
 /* Mostrar sidebar en móviles cuando está abierto */
 .sidebar-mobile.sidebar-open {
-  left: 0;
+  left: 0 !important;
 }
 
 /* Media Queries para móviles */

@@ -1,0 +1,10 @@
+.carousel-inner img {
+  width: 100%;
+  max-height: 300px; /* Ajusta la altura del carrusel */
+  object-fit: cover; /* Para que las imágenes no se distorsionen */
+}
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro para mejorar visibilidad */
+  padding: 10px;
+  border-radius: 10px;
+}

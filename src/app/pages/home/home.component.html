@@ -1,3 +1,86 @@
-<div class="container mt-5">
-  <h1>Bienvenido al Dashboard</h1>
+<div class="container home">
+  <div class="row">
+    <!-- Sección de búsqueda -->
+    <div class="col-lg-6 custom-margin ">
+      <h1 class="title">¿Qué quieres buscar?</h1>
+      <p>Encuentra la información que desees consultar ...</p>
+      <div class="search-bar">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <select class="form-select form-control rounded-0 ">
+              <option selected >Todos los servicios</option>
+            </select>
+          </div>
+          <input type="text" class="form-control rounded-0" placeholder="¿Qué servicio quieres consultar?" />
+          <button class="btn btn-primary bg-custom rounded-0">
+            <i class="bi bi-search"></i>
+            <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+          </button>
+        </div>
+      </div>
+
+
+
+
+      <div class="row g-0 services mt-4">
+        <div class="col-md-4">
+          <div class="card h-100 border-0">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Certificado</h5>
+              <p class="card-text flex-grow-1">Conoce los beneficios que tenemos para ti al registrarte</p>
+              <button class="btn btn-outline-success w-100">+ beneficios</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Crear cuenta</h5>
+              <p class="card-text flex-grow-1">Conoce los beneficios que tenemos para ti al registrarte</p>
+              <button class="btn btn-outline-success w-100">Ver todo</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Top trámites</h5>
+              <p class="card-text flex-grow-1">Conoce los trámites más solicitados</p>
+              <button class="btn btn-outline-success w-100">Ver todo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+ <!-- Sección de imagen y servicios -->
+<div class="col-lg-4 text-center ">
+  <div class="image-container">
+    <img src="assets/images/resource-1.png" class="img-fluid" alt="Servicios Quipux">
+    <h2 class="service-title">SERVICIOS QUIPUX</h2>
+  </div>
+
+
+<div class="card service-card mt-3">
+  <div class="card-body">
+    <h5 class="card-title">Trámites en tu mano</h5>
+    <p class="card-text">Ahora podrás hacer todos tus trámites desde la comodidad de tu casa, desde cualquier dispositivo.</p>
+
+
+    <div class="d-flex align-items-center">
+      <!-- Texto <1/4> -->
+      <p class="m-2">&lt;<span class="blue-text">1</span>/4&gt;</p>
+      <!-- Barra de progreso -->
+      <div class="progress ml-2" style="flex-grow: 1;">
+        <div class="progress-bar progress-bar-striped progress-bar-animated"></div>
+      </div>
+    </div>
+
+    </div>
+  </div>
 </div>
+</div>
+
+

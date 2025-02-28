@@ -1,1 +1,70 @@
-<p>articulos works!</p>
+<div class="container-fluid mt-3 px-3">
+  <div class="row gx-3 align-items-stretch">
+    <!-- Columna Izquierda: Información de Contacto -->
+    <div class="col-md-4 d-flex flex-column">
+      <div class="card border-0 p-4 text-center h-100" style="max-height: 80vh; ">
+        <h5 class="fw-bold text-start mb-4">INFORMACIÓN DEL CONTACTO</h5>
+        <p><strong>Dirección</strong><br>{{ contacto.direccion.calle }}, {{ contacto.direccion.ciudad }} - {{ contacto.direccion.pais }}</p>
+        <p><strong>Correo electrónico</strong><br>{{ contacto.correo_electronico }}</p>
+        <p><strong>Sitio Web</strong><br>
+          <a [href]="contacto.sitio_web" class="text-primary d-block">{{ contacto.sitio_web }}</a>
+        </p>
+        <p><strong>Red social</strong><br>
+          <a [href]="contacto.redes_sociales.instagram" class="text-primary d-block">Instagram</a>
+          <a [href]="contacto.redes_sociales.linkedin" class="text-primary d-block">LinkedIn</a>
+        </p>
+        <p><strong>Dirección de correspondencia</strong><br>
+          {{ contacto.direccion_correspondencia.calle }}, {{ contacto.direccion_correspondencia.ciudad }} - {{ contacto.direccion_correspondencia.pais }}
+        </p>
+        <p><strong>Número de teléfonos</strong><br>
+          <strong>Fijo:</strong> {{ contacto.telefonos.fijo }}<br>
+          <strong>Celular:</strong> {{ contacto.telefonos.celular }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Columna Derecha: Carrusel y Artículos -->
+    <div class="col-md-8 d-flex flex-column">
+      <!-- Carrusel -->
+      <div id="articulosCarousel" class="carousel slide mb-4 flex-grow-1" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button *ngFor="let slide of carrousel; let i = index"
+                  type="button"
+                  data-bs-target="#articulosCarousel"
+                  [attr.data-bs-slide-to]="i"
+                  [class.active]="i === 0"
+                  [attr.aria-label]="'Slide ' + (i + 1)">
+          </button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item" *ngFor="let slide of carrousel; let i = index" [class.active]="i === 0">
+            <img [src]="slide.imagen" class="d-block w-100 img-fluid" alt="Imagen de {{ slide.titulo }}">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+              <h5>{{ slide.titulo }}</h5>
+              <p>{{ slide.descripcion }}</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#articulosCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#articulosCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <!-- Grid de Artículos con Barra de Desplazamiento -->
+      <div class="card border-0 flex-grow-1" style="overflow-y: auto; max-height: 40vh;">
+        <div class="row">
+          <div class="col-6 col-md-4 col-lg-3 text-center mb-4" *ngFor="let articulo of articulos">
+            <div class="rounded-circle bg-light d-flex align-items-center justify-content-center mx-auto" style="width: 80px; height: 80px">
+              <img [src]="articulo.imagen" class="rounded-circle" style="width: 80px; height: 80px"/>
+            </div>
+            <h6 class="mt-2">{{ articulo.titulo }}</h6>
+            <p class="text-muted small">{{ articulo.descripcion }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

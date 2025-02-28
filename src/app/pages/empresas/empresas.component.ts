@@ -5,8 +5,7 @@ import contactoData from '../../../assets/data/info-contacto.json';
 
 @Component({
   selector: 'app-empresas',
-  standalone: true, // Asegúrate de que este componente sea standalone
-  imports: [CommonModule], // Agrega CommonModule aquí
+  imports: [CommonModule],
   templateUrl: './empresas.component.html',
   styleUrls: ['./empresas.component.css']
 })

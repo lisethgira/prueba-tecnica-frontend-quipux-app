@@ -1,17 +1,23 @@
 <div class="sidebar-container">
   <!-- Botón de menú para móviles -->
-  <div class="mobile-menu-btn d-md-none" [ngClass]="{ 'sidebar-collapsed': !open, 'sidebar-mobile': isMobile }">
+  <div
+    class="mobile-menu-btn d-md-none"
+  >
     <fa-icon
       (click)="toggleMenu()"
       [icon]="faBars"
-      class="text-white fs-3 cursor-pointer"
+      class="text-white fs-3"
     ></fa-icon>
   </div>
 
   <!-- Sidebar -->
   <div
     class="sidebar"
-    [ngClass]="{ 'sidebar-collapsed': !open, 'sidebar-mobile': isMobile }"
+    [ngClass]="{
+      'sidebar-collapsed': !open,
+      'sidebar-mobile': isMobile,
+      'sidebar-open': isMobile && open
+    }"
   >
     <!-- Header Sidebar -->
     <div class="d-flex justify-content-between align-items-center p-3">
@@ -19,15 +25,11 @@
       <fa-icon
         (click)="toggleMenu()"
         [icon]="faBars"
-        class="text-white fs-4 d-none d-md-block cursor-pointer"
+        class="text-white fs-3 d-none d-md-block"
       ></fa-icon>
 
       <!-- Logo -->
-      <a
-        routerLink="/"
-        routerLinkActive="text-primary"
-        class="menu-item"
-      >
+      <a routerLink="/" routerLinkActive="text-primary" class="menu-item">
         <img
           *ngIf="open"
           src="assets/images/logoblanco.png"
@@ -48,7 +50,7 @@
             routerLinkActive="text-primary"
             class="menu-item"
           >
-            <fa-icon [icon]="faBuilding" class="me-2"></fa-icon>
+            <fa-icon [icon]="faBuilding" class="fs-3"></fa-icon>
             <span *ngIf="open">EMPRESAS</span>
           </a>
         </li>
@@ -58,7 +60,7 @@
             routerLinkActive="text-primary"
             class="menu-item"
           >
-            <fa-icon [icon]="faNewspaper" class="me-2"></fa-icon>
+            <fa-icon [icon]="faNewspaper" class="fs-3"></fa-icon>
             <span *ngIf="open">ARTÍCULOS</span>
           </a>
         </li>
@@ -68,7 +70,7 @@
             routerLinkActive="text-primary"
             class="menu-item"
           >
-            <fa-icon [icon]="faUser" class="me-2"></fa-icon>
+            <fa-icon [icon]="faUser" class="fs-3"></fa-icon>
             <span *ngIf="open">COLABORADORES</span>
           </a>
         </li>
