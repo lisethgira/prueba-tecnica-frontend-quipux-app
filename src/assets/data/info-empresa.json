@@ -1,0 +1,21 @@
+[
+  {
+    "empresa": {
+      "nombre": "Quipux S.A.S",
+      "fecha_creacion": "1995/05/06",
+      "direccion": {
+        "calle": "Carrera 43A No. 3 Sur-130",
+        "edificio": "Ed. Milla de Oro",
+        "distrito": "Distrito de negocios Torre 1",
+        "piso": "Piso 12",
+        "ciudad": "Medellín",
+        "pais": "Colombia"
+      },
+      "telefonos": {
+        "fijo": "+57 (4) 313-70-00",
+        "fax": "+57 (4) 313-44-77"
+      },
+      "sitio_web": "www.quipux.com/site"
+    }
+  }
+]

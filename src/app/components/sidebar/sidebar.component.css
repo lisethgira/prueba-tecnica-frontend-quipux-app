@@ -47,8 +47,12 @@ body {
 }
 
 #sidebar.expand {
-    width: 260px;
-    min-width: 260px;
+  width: 180px; /* Reducido de 260px */
+  min-width: 180px;
+}
+
+.sidebarwidth {
+  width: 250px;
 }
 
 .toggle-btn {
