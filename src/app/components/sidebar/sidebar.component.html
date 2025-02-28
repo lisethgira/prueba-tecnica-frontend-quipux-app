@@ -1,30 +1,75 @@
-<div class="d-flex flex-column">
+<div class="sidebar-container">
+  <!-- Botón de menú para móviles -->
+  <div class="mobile-menu-btn d-md-none" [ngClass]="{ 'sidebar-collapsed': !open, 'sidebar-mobile': isMobile }">
+    <fa-icon
+      (click)="toggleMenu()"
+      [icon]="faBars"
+      class="text-white fs-3 cursor-pointer"
+    ></fa-icon>
+  </div>
+
   <!-- Sidebar -->
-  <div [ngClass]="open ? 'sidebarwidth' : 'w-2'"  class="sidebar d-flex flex-column p-3 vh-100 bg-dark">
-    <div class="d-flex justify-content-between align-items-center">
+  <div
+    class="sidebar"
+    [ngClass]="{ 'sidebar-collapsed': !open, 'sidebar-mobile': isMobile }"
+  >
+    <!-- Header Sidebar -->
+    <div class="d-flex justify-content-between align-items-center p-3">
       <!-- Ícono de menú -->
-      <fa-icon (click)="toggleMenu()" [icon]="faBars" class="text-white fs-4 cursor-pointer"></fa-icon>
+      <fa-icon
+        (click)="toggleMenu()"
+        [icon]="faBars"
+        class="text-white fs-4 d-none d-md-block cursor-pointer"
+      ></fa-icon>
 
       <!-- Logo -->
-      <img *ngIf="open" src="assets/images/logoblanco.png" alt="Quipux Logo" class="img-fluid w-50"
-        [ngStyle]="{'width.px': open ? 50 : 100}" />
+      <a
+        routerLink="/"
+        routerLinkActive="text-primary"
+        class="menu-item"
+      >
+        <img
+          *ngIf="open"
+          src="assets/images/logoblanco.png"
+          alt="Quipux Logo"
+          class="img-fluid logo"
+        />
+      </a>
     </div>
+
+    <hr class="text-secondary mx-3" />
+
     <!-- Menú de Navegación -->
     <nav class="mt-3">
       <ul class="list-unstyled text-white">
         <li>
-          <a routerLink="/" routerLinkActive="text-primary" class="text-decoration-none">
-            🏠 <span *ngIf="open">Home</span>
+          <a
+            routerLink="/empresas"
+            routerLinkActive="text-primary"
+            class="menu-item"
+          >
+            <fa-icon [icon]="faBuilding" class="me-2"></fa-icon>
+            <span *ngIf="open">EMPRESAS</span>
           </a>
         </li>
         <li>
-          <a routerLink="/empresas" routerLinkActive="text-primary" class="text-decoration-none">
-            🏢 <span *ngIf="open">Empresas</span>
+          <a
+            routerLink="/articulos"
+            routerLinkActive="text-primary"
+            class="menu-item"
+          >
+            <fa-icon [icon]="faNewspaper" class="me-2"></fa-icon>
+            <span *ngIf="open">ARTÍCULOS</span>
           </a>
         </li>
         <li>
-          <a routerLink="/articulos" routerLinkActive="text-primary" class="text-decoration-none">
-            📰 <span *ngIf="open">Artículos</span>
+          <a
+            routerLink="/colaboradores"
+            routerLinkActive="text-primary"
+            class="menu-item"
+          >
+            <fa-icon [icon]="faUser" class="me-2"></fa-icon>
+            <span *ngIf="open">COLABORADORES</span>
           </a>
         </li>
       </ul>
